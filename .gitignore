@@ -1,0 +1,11 @@
+# idea Code settings
+.vscode/
+.idea/
+
+# tmp folder
+tmp/
+
+# build files
+build/
+dist/
+*.spec
