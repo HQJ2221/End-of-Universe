@@ -1,8 +1,7 @@
-<center>
-<p style="font-family:STHupo; font-size:64px;">What the HEX? </p>
-<br/>
-<img src="https://img.shields.io/badge/version-1.0.0-blue">
-</center>
+<div align="center">
+  <img src="assets/what_the_hex_logo.png" alt="What the Hex?" width="600">
+  <img src="https://img.shields.io/badge/version-1.0.0-blue">
+</div>
 
 - a simple tool for number system conversion
 
