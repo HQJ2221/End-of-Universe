@@ -15,7 +15,7 @@
 
   ```bash
   npm install -r requirements.txt
-  python
+  python build_exe.py
   ```
 
 ## ⚠ Warning
