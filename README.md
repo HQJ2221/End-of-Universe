@@ -1,5 +1,6 @@
 <div align="center">
-  <img src="assets/what_the_hex_logo.png" alt="What the Hex?" width="600">
+  <img src="assets/what_the_hex_logo.png" alt="What the Hex?" width="400">
+  <div>&nbsp;</div>
   <img src="https://img.shields.io/badge/version-1.0.0-blue">
 </div>
 
