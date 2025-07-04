@@ -1,12 +1,13 @@
 <div align="center">
   <img src="assets/logo.png" alt="What the Hex?" width="400">
   <div>&nbsp;</div>
-  <img src="https://img.shields.io/badge/version-1.0.0-blue">
+  <img src="https://img.shields.io/badge/version-2.0.0-blue"><span>
+  <img src="https://img.shields.io/badge/author-Qijun He-green" href="https://github.com/HQJ2221">
 </div>
 
 - a simple tool for number system conversion
 
-## Installation
+## 🚀 Installation
 
 ### Build from source code
 
@@ -18,7 +19,11 @@
   python build_exe.py
   ```
 
-## ⚠ Warning
+## 🎯 Target
+
+See [issues](https://github.com/HQJ2221/End-of-Universe/issues).
+
+## ⚠️ Warning
 
 - Currently support for Windows only
 - MacOS and Linux support is under testing (unavailable yet)
