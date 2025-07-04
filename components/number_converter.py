@@ -2,33 +2,23 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 import sys
 import os
-import platform
+from lang import lang
 
-class NumberConverter:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("What the HEX? v1.0.0")
-        self.root.geometry("500x350")
-        self.root.resizable(False, False)
-
-        # 设置应用图标
-        self.set_icon()
-        
-        # 设置样式
-        self.style = ttk.Style()
-        self.style.configure("TLabel", font=("Arial", 10))
-        self.style.configure("TButton", font=("Arial", 10))
-        self.style.configure("TEntry", font=("Arial", 10))
+class NumberConverter(tk.Frame):
+    def __init__(self, parent, return_callback=None):
+        super().__init__(parent)
+        self.return_callback = return_callback
+        self.pack(fill="both", expand=True)
         
         # 输入部分
-        input_frame = ttk.Frame(root)
+        input_frame = ttk.Frame(self)
         input_frame.pack(pady=15, padx=20, fill="x")
-        
-        ttk.Label(input_frame, text="Number:").grid(row=0, column=0, padx=(0, 5))
+
+        ttk.Label(input_frame, text=f"{lang.get('number-converter.input')}").grid(row=0, column=0, padx=(0, 5))
         self.number_entry = ttk.Entry(input_frame, width=25)
         self.number_entry.grid(row=0, column=1, padx=5)
-        
-        ttk.Label(input_frame, text="Num-System:").grid(row=0, column=2, padx=(10, 5))
+
+        ttk.Label(input_frame, text=f"{lang.get('number-converter.num-system')}").grid(row=0, column=2, padx=(10, 5))
         self.base_var = tk.StringVar()
         self.base_combobox = ttk.Combobox(
             input_frame, 
@@ -42,15 +32,15 @@ class NumberConverter:
         
         # 转换按钮
         convert_btn = ttk.Button(
-            root, 
-            text="Convert",
+            self, 
+            text=f"{lang.get('number-converter.convert')}",
             command=self.convert,
             width=15
         )
         convert_btn.pack(pady=10)
         
         # 结果展示
-        result_frame = ttk.LabelFrame(root, text="Conversion Results")
+        result_frame = ttk.LabelFrame(self, text=f"{lang.get('number-converter.results')}")
         result_frame.pack(pady=15, padx=20, fill="both", expand=True)
         
         # 创建结果标签
@@ -68,7 +58,12 @@ class NumberConverter:
                 foreground="blue",
                 font=("Arial", 10, "bold")
             ).grid(row=i, column=1, padx=10, pady=5, sticky="w")
-    
+
+        # 返回按钮
+        if self.return_callback:
+            back_btn = ttk.Button(self, text=f"← {lang.get('back')}", command=self.return_callback)
+            back_btn.pack(pady=(5, 10))
+
     def convert(self):
         # 获取输入
         input_str = self.number_entry.get().strip()
@@ -103,7 +98,7 @@ class NumberConverter:
             self.result_vars[16].set(hex(decimal_value))
             
         except ValueError as e:
-            error_msg = f"Input Error: {str(e)}"
+            error_msg = f"{lang.get('number-converter.invalid-input')}:\n {str(e)}"
             if base_value == 2:
                 error_msg = "Binary can only contain 0 and 1"
             elif base_value == 8:
@@ -114,21 +109,6 @@ class NumberConverter:
             # 清空结果
             for var in self.result_vars.values():
                 var.set("")
-
-    def set_icon(self):
-        """设置应用图标，处理打包后的资源路径"""
-        try:
-            # 获取正确的资源路径
-            base_path = self.get_base_path()
-            icon_path = os.path.join(base_path, "assets", "head.ico")
-            
-            # 检查文件是否存在
-            if os.path.exists(icon_path):
-                self.root.iconbitmap(icon_path)
-            else:
-                print(f"Icon-file not exists: {icon_path}")
-        except Exception as e:
-            print(f"Failed setting icon: {e}")
     
     def get_base_path(self):
         """获取资源文件的基础路径"""

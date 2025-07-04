@@ -3,6 +3,9 @@
 .idea/
 .venv/
 
+# cache files
+__pycache__/
+
 # tmp folder
 tmp/
 

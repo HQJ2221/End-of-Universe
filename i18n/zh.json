@@ -1,0 +1,23 @@
+{
+  "title": "开发工具集",
+  "lang-selector": "语言",
+  "select-tool": "选择工具",
+  "btn-hex": "进制转换器",
+  "btn-cpp": "C++ 参考手册",
+  "status-ready": "就绪",
+  "status-open-hex": "正在打开进制转换器...",
+  "status-open-cpp": "正在打开C++参考手册...",
+  "number-converter": {
+    "input": "输入数字:",
+    "num-system": "选择进制:",
+    "convert": "转换",
+    "results": "转换结果:",
+    "invalid-input": "无效输入，请输入有效的数字"
+  },
+  "cpp-reference": {
+    "data-structures": "数据结构",
+    "functions": "函数",
+    "description": "描述"
+  },
+  "back": "返回"
+}

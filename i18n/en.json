@@ -1,0 +1,23 @@
+{
+  "title": "Dev Toolkit",
+  "lang-selector": "Language",
+  "select-tool": "Select Tool",
+  "btn-hex": "Number Base Converter",
+  "btn-cpp": "C++ Reference Manual",
+  "status-ready": "Ready",
+  "status-open-hex": "Opening Hex Converter...",
+  "status-open-cpp": "Opening C++ Reference...",
+  "number-converter": {
+    "input": "Input Number:",
+    "num-system": "Select Base:",
+    "convert": "Convert",
+    "results": "Conversion Results:",
+    "invalid-input": "Invalid input, please enter a valid number"
+  },
+  "cpp-reference": {
+    "data-structures": "Data Structures",
+    "functions": "Functions",
+    "description": "Description"
+  },
+  "back": "Back"
+}
