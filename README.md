@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/author-Qijun He-green" href="https://github.com/HQJ2221">
 </div>
 
-- a simple tool for number system conversion
+- a simple tool for multiple usage
 
 ## 🚀 Installation
 
